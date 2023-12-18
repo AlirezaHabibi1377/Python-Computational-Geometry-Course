@@ -1,0 +1,181 @@
+# ==== Created By : Alireza habibi - 810399023 =====
+
+import matplotlib.pyplot as plt
+import bisect as b
+import shapely.geometry
+import matplotlib.pyplot as plt
+import tkinter as tk
+from tkinter import filedialog
+import copy
+
+#================= All Functions is used for Monotone triangulation ====================
+def create_polygon_with_InputData():
+    '''
+    Brwose text file on your files and get text file that is Input Monotone polygon
+    '''
+    polygon = [] 
+    XY = []
+    root = tk.Tk()
+    file_path = filedialog.askopenfilename(title="Triangulate",filetypes = (("Text","*.txt"),("all files","*.*")))
+    with open(file_path) as f:
+        for line in f:
+            x , y = line.split()
+            XY.append(float(x))
+            XY.append(float(y))
+            polygon.append(XY)
+            XY = []
+    return polygon
+
+def plot_polygone(input_Polygon):  
+    '''
+    plot of Input polygon
+    '''
+    px , py = [] , []
+    for XY_poly in input_Polygon:
+        px.append (XY_poly[0]) 
+        py.append (XY_poly[1])
+        plt.plot(XY_poly[0],XY_poly[1],'bo')
+
+    plt.plot(px,py,'m-',linewidth = '2.2')
+
+def Plot_diagonals(Diag):
+    '''
+    plot of polygon diagonals that detected in Code
+    '''
+    for i_d in Diag:
+        xx = [i_d[0][0],i_d[1][0]]
+        yy = [i_d[0][1],i_d[1][1]]
+        plt.plot(xx,yy,'g-')
+        plt.pause(0.2)
+       
+def Geometry_polygon(polygon):
+    '''
+    Create geometry of polygon with shapely library
+    '''
+    Polygon_Geometry = shapely.geometry.Polygon(polygon) 
+    return Polygon_Geometry
+
+def Geometry_line(line):
+    '''
+    Create geometry of line with shapely library
+    '''
+    line = shapely.geometry.LineString(line)
+    return line
+
+def Create_Sort_Q(polygon):
+    '''
+    Create Q matrix consist of all vertex of polygon 
+    and sort with "X" coordinate and "Y" coordinate 
+    and delete duplicate element of Vertexs
+    '''
+    polygon.sort()
+    polygon = [i for n, i in enumerate(polygon) if i not in polygon[:n]]
+    polygon.sort(key=lambda x: x[1], reverse=True) 
+    Sort_Q = polygon
+    return Sort_Q
+                
+def Triangulation(Polygon):
+    '''
+    Creation all Triangulation of Monotone polygon.
+    '''
+    # Create Sample polygon of input polygon 
+    polygon_sample = copy.deepcopy(Polygon)
+
+    # Call function for Create Q of polygon that is consist of vertexs of polygon
+    Sort_Q = Create_Sort_Q(polygon_sample)
+    
+    # Create Stack
+    Stack=[Sort_Q[0],Sort_Q[1]]
+
+    # Create diagonals of polygon for create Triangulation
+    diags = []
+    
+    # Call function for convert list of polygon to Geometry polygon
+    Polygon_Geometry = Geometry_polygon(polygon) 
+
+    # for create Stack and updated that is used for two chain of polygon
+    for j in range(3,len(Sort_Q)):
+
+        Vj = Sort_Q[j-1]
+
+        # find index of lastest vertex of Stack in polygon
+        Vj_last_index = polygon.index(Stack[len(Stack)-1])
+
+        # find index of Vj in polygon
+        Vj_index = polygon.index(Vj)
+        
+        # subtraction of two Index for comparision two Vertex 
+        # and understande that Two vertex is on same chane or not
+        DeltaIndex = (Vj_last_index-Vj_index)
+
+        # this section is for analysis that two vertex is on same chain or not 
+        # (chain : reflexive chain - mutual chain)
+        # and with comparision its detect Triangulation of polygon.
+        # "if" section ====> two vertex is on same chain ---> we can drawing some diagonal (not all)
+        if abs(DeltaIndex) == 1 or abs(DeltaIndex) == len(polygon)-2:  
+            
+            # save latest vertex of Stack 
+            lastest_delete = Stack[len(Stack)-1] 
+
+            # delete Latest vertex of Stack
+            del(Stack[len(Stack)-1])
+            
+            # move of end to start on Stack
+            for item in Stack[::-1]: 
+                
+                # diagonal
+                d = [Vj,item]  
+                
+                # Call function for line Geometry 
+                line_Geometry = Geometry_line(d)
+                line_intersection = Polygon_Geometry.intersection(line_Geometry)
+
+                # Check for diagonal is valid or unvalid
+                # if intersect of line and polygon = line ----> diagonal is valid(diagonal is in polygon)
+                # othervise diagonal is unvalid
+                if line_intersection == line_Geometry:
+                    
+                    lastest_delete = item
+                    del(Stack[-1])
+
+                    # append d to diagonal matrix
+                    diags.append(d)  
+
+                else:
+                    break
+
+            # Stack must Uppdated with append Vj and latest vertex    
+            Stack.append(lastest_delete)  
+            Stack.append(Vj)  
+
+        # "else" section  : mutual chain(oposite of reflexive chain)
+        else:  
+
+            # append all diagonal to diagonal matrix because all of it valid
+            for items in Stack[1:]:
+                d = [Vj,items]
+                diags.append(d)
+                
+            # delete all of vertex of Stack
+            del(Stack[:-1])
+            
+            # Uppdated Stack with append Vj to it
+            Stack.append(Vj)
+            
+    # for latest vertex of polygon
+    for i_n in Stack[1:-1]:
+        diags.append([Vj[-1],i_n])
+
+    # plot polygon
+    plot_polygone(polygon)
+
+    # plot diagonal of monotone polygon and create Triangulation
+    Plot_diagonals(diags)
+
+    plt.show()
+
+# Call Function for create Input polygon
+polygon = create_polygon_with_InputData()  
+# polygon=[[2361.9771,1048.9401],[2416.6060,1147.4432],[2580.4924,1232.8916],[2818.0090,1232.8916],[3003.2719,1161.6846],[2915.3908,1021.6441],[2780.0063,962.3049],[2578.1172,962.3049],[2399.9798,1007.4027],[2361.9771,1048.9401]]
+
+Triangulation(polygon)   
