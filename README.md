@@ -2,7 +2,7 @@ Hello!
 
 Algorithmic programming for triangulating a polygon, the Triangulate Monotone Polygon algorithm, is one of my projects in the Computational Geometry course of my Master's degree.
 
-# Convex Hull Visualization
+# 1) Convex Hull Visualization
 
 This project provides a visualization tool for computing and displaying the convex hull of a set of 2D points. The convex hull is the smallest convex polygon that can enclose all the given points.
 
