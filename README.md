@@ -1,6 +1,6 @@
-Hello!
+Hello, friends,
 
-Algorithmic programming for triangulating a polygon, the Triangulate Monotone Polygon algorithm, is one of my projects in the Computational Geometry course of my Master's degree.
+I have provided all of my Python projects from the Computational Geometry course of my Master's degree below. I hope you find them helpful for your research and projects.
 
 # 1) Convex Hull Visualization
 
