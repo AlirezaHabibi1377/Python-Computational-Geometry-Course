@@ -24,7 +24,7 @@ This project provides a visualization tool for computing and displaying the conv
 2. Run the script:
 
     ```bash
-    python convex_hull.py
+    python ConvexHull_Incremental.py
     ```
 
 3. Select the input text file containing the coordinates of the points when prompted. The file should contain points in the following format:
@@ -124,7 +124,7 @@ After running the algorithm, the following outputs are produced:
 ![Intersection Plot](Monotone%20Triangulation/Triangulation_Monoton_Polygon.png)
 
 ```bash
-python monotone_triangulation.py
+python TriangulateMonoton.py
 ```
 
 ## Conclusion
