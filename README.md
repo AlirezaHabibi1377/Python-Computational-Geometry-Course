@@ -178,9 +178,17 @@ The output of the script includes:
 - Edges: Green lines representing the edges of the Voronoi cells.
 - Bounding Box: The plot includes a bounding box around the Voronoi diagram to ensure all regions are visible.
 
+**Output of 'InputPoints1.txt'**
+
 ![Intersection Plot](Voronoi%20Diagram/Figure_1.png)
 
+This image shows the Voronoi diagram generated from the points specified in 'InputPoints1.txt'. The diagram includes the vertices and edges of the Voronoi cells, with a bounding box to ensure visibility of all regions.
+
+**Output of 'InputPoints2.txt'**
+
 ![Intersection Plot](Voronoi%20Diagram/Figure_2.png)
+
+This image depicts the Voronoi diagram for the points in 'InputPoints2.txt'. Similar to the previous output, it displays the computed Voronoi cells with vertices and edges, highlighting the spatial partitioning based on the input points.
 
 ## Conclusion
 
