@@ -100,3 +100,33 @@ After running the algorithm, the following outputs are produced:
 The plane sweep algorithm effectively identifies and visualizes intersections among line segments in a 2D plane. By handling events such as line endpoints and intersection points, the algorithm efficiently determines all intersecting lines and provides a clear graphical representation. The sorted output of intersection points and the list of intersecting lines offer valuable insights into the geometric relationships between the input line segments.
 
 This approach can be extended to more complex geometrical problems and adapted for various applications in computational geometry.
+
+# Monotone Triangulation
+
+## Introduction
+
+This project implements a monotone triangulation algorithm for polygons. The algorithm performs triangulation on a polygon provided by the user and visualizes both the polygon and the resulting diagonals. Monotone triangulation is used in computational geometry to divide a polygon into triangles, facilitating various applications such as rendering and collision detection.
+
+## Usage
+
+1. **Input Data**: Prepare a text file with polygon vertex coordinates. Each line should contain the x and y coordinates of a vertex, separated by a space.
+2. **Run the Script**: Execute the script in an environment where Python and the required libraries (`matplotlib`, `shapely`, `tkinter`, `copy`) are installed.
+3. **Select File**: A file dialog will appear prompting you to select the text file containing the polygon data.
+4. **View Results**: The script will plot the polygon and its diagonals. A window with the plot will appear showing the triangulation.
+
+## Output
+
+After running the algorithm, the following outputs are produced:
+
+1. **Polygon Plot**: The input polygon is plotted, showing the vertices and the edges connecting them.
+2. **Diagonals Plot**: The diagonals added during triangulation are plotted, demonstrating how the polygon is divided into triangles.
+3. **Visualization**: The final plot displays both the polygon and its diagonals, helping to visually confirm the triangulation results.
+![Intersection Plot](Monotone%20Triangulation/Triangulation_Monoton_Polygon.png)
+
+```bash
+python monotone_triangulation.py
+```
+
+## Conclusion
+
+This script provides a practical implementation of monotone triangulation, useful for dividing polygons into simpler triangular regions. The algorithm visualizes the results, which helps in understanding how the polygon is triangulated. By using this script, users can efficiently visualize and verify triangulations for various polygon shapes.
