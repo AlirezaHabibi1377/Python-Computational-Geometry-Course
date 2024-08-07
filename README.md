@@ -38,6 +38,12 @@ This project provides a visualization tool for computing and displaying the conv
 
 4. The script will display the points and the convex hull in a plot.
 
+## Output
+
+When you run the script and provide the input file, the output will be a plot displaying the points and the convex hull. Below is an example of the output from the input file:
+
+![Convex Hull Example](Convex Hull Visualization/ConvexHull_Figure.png)
+
 ## Conclusion
 
 This script provides a simple yet effective way to visualize the convex hull of a set of 2D points. It demonstrates basic concepts of computational geometry and can be extended or modified for more advanced applications.
