@@ -51,6 +51,8 @@ This script provides a simple yet effective way to visualize the convex hull of 
 
 # 2) SweepLine Intersection
 
+The **Plane Sweep Intersection Algorithm** is a computational geometry technique designed to efficiently find all intersections among a set of line segments in a 2D plane. This algorithm simulates a vertical line, called the sweep line, which moves from left to right across the plane. As the sweep line progresses, it processes various events, such as the start or end of line segments and intersections between segments.
+
 ## Introduction
 
 This project implements a plane sweep algorithm to find and visualize intersections among a set of lines in a 2D plane. The algorithm processes a series of line segments to determine their intersection points and plots these points for visualization. It uses the sweep line technique, which involves sweeping a vertical line across the plane and maintaining a status list of active line segments.
