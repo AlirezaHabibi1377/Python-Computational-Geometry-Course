@@ -178,9 +178,9 @@ The output of the script includes:
 - Edges: Green lines representing the edges of the Voronoi cells.
 - Bounding Box: The plot includes a bounding box around the Voronoi diagram to ensure all regions are visible.
 
-![Intersection Plot](VoronoiDiagram/Figure_1.png)
+![Intersection Plot](Voronoi%20Diagram/Figure_1.png)
 
-![Intersection Plot](VoronoiDiagram/Figure_2.png)
+![Intersection Plot](Voronoi%20Diagram/Figure_2.png)
 
 ## Conclusion
 
