@@ -95,4 +95,8 @@ After running the algorithm, the following outputs are produced:
 
 ![Intersection Plot](SweepLine%20Intersection/Intersect_plot.png)
 
+## Conclusion
 
+The plane sweep algorithm effectively identifies and visualizes intersections among line segments in a 2D plane. By handling events such as line endpoints and intersection points, the algorithm efficiently determines all intersecting lines and provides a clear graphical representation. The sorted output of intersection points and the list of intersecting lines offer valuable insights into the geometric relationships between the input line segments.
+
+This approach can be extended to more complex geometrical problems and adapted for various applications in computational geometry.
