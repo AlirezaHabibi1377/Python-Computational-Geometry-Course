@@ -93,6 +93,6 @@ After running the algorithm, the following outputs are produced:
 2. **Intersecting Lines**: A list of line pairs that intersect with each other. The format is `[line1, line2]`, indicating that line `line1` intersects with line `line2`.
 3. **Visualization**: A plot showing all intersection points on a 2D plane. Each point is marked to visually confirm the intersections.
 
-![Intersection Plot](SweepLine%20IntersectionConvex/Intersect_plot.png)
+![Intersection Plot](SweepLine%20Intersection/Intersect_plot.png)
 
 
