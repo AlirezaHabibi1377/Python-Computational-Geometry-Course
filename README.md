@@ -48,7 +48,7 @@ When you run the script and provide the input file, the output will be a plot di
 
 This script provides a simple yet effective way to visualize the convex hull of a set of 2D points. It demonstrates basic concepts of computational geometry and can be extended or modified for more advanced applications.
 
-# <span style="color:blue;">2) SweepLine Intersection</span>
+# 🔵 2) SweepLine Intersection
 
 The **Plane Sweep Intersection Algorithm** is a computational geometry technique designed to efficiently find all intersections among a set of line segments in a 2D plane. This algorithm simulates a vertical line, called the sweep line, which moves from left to right across the plane. As the sweep line progresses, it processes various events, such as the start or end of line segments and intersections between segments.
 
@@ -100,7 +100,7 @@ The plane sweep algorithm effectively identifies and visualizes intersections am
 
 This approach can be extended to more complex geometrical problems and adapted for various applications in computational geometry.
 
-# <span style="color:blue;">3) Monotone Triangulation</span>
+# 🔵 3) Monotone Triangulation
 
 ## Introduction
 
@@ -130,7 +130,8 @@ python TriangulateMonoton.py
 
 This script provides a practical implementation of monotone triangulation, useful for dividing polygons into simpler triangular regions. The algorithm visualizes the results, which helps in understanding how the polygon is triangulated. By using this script, users can efficiently visualize and verify triangulations for various polygon shapes.
 
-# <span style="color:blue;">4) Voronoi Diagram</span>
+
+# 🔵 4) Voronoi Diagram
 
 This project implements a Voronoi Diagram generator using Python. The Voronoi Diagram is a fundamental geometric structure used in various fields such as computational geometry, geographic information systems, and more. This implementation uses a sweep line algorithm to compute the diagram and visualize the results using Matplotlib.
 
