@@ -130,3 +130,9 @@ python TriangulateMonoton.py
 ## Conclusion
 
 This script provides a practical implementation of monotone triangulation, useful for dividing polygons into simpler triangular regions. The algorithm visualizes the results, which helps in understanding how the polygon is triangulated. By using this script, users can efficiently visualize and verify triangulations for various polygon shapes.
+
+## Contact
+
+For questions or further information, please contact:
+
+Email: mo.alireza77habibi@gmail.com
