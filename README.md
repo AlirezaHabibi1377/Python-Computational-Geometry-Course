@@ -2,7 +2,7 @@ Hello, friends,
 
 I have provided all of my Python projects from the Computational Geometry course of my Master's degree below. I hope you find them helpful for your research and projects.
 
-# <span style="color:blue;">1) Convex Hull Visualization</span>
+# 🔵 1) Convex Hull Visualization
 
 This project provides a visualization tool for computing and displaying the convex hull of a set of 2D points. The convex hull is the smallest convex polygon that can enclose all the given points.
 
