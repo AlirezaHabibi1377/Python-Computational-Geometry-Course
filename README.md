@@ -42,7 +42,7 @@ This project provides a visualization tool for computing and displaying the conv
 
 When you run the script and provide the input file, the output will be a plot displaying the points and the convex hull. Below is an example of the output from the input file:
 
-![Convex Hull Example](Convex Hull Visualization/ConvexHull_Figure.png)
+![Convex Hull Example](Convex%20Hull%20Visualization/ConvexHull_Figure.png)
 
 ## Conclusion
 
