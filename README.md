@@ -131,6 +131,61 @@ python TriangulateMonoton.py
 
 This script provides a practical implementation of monotone triangulation, useful for dividing polygons into simpler triangular regions. The algorithm visualizes the results, which helps in understanding how the polygon is triangulated. By using this script, users can efficiently visualize and verify triangulations for various polygon shapes.
 
+# Voronoi Diagram
+
+This project implements a Voronoi Diagram generator using Python. The Voronoi Diagram is a fundamental geometric structure used in various fields such as computational geometry, geographic information systems, and more. This implementation uses a sweep line algorithm to compute the diagram and visualize the results using Matplotlib.
+
+## Introduction
+
+A Voronoi Diagram partitions a plane into regions based on the distance to a specified set of points. Each region corresponds to one of the points, and any location within a region is closer to its corresponding point than to any other. This visualization is particularly useful for problems involving proximity and spatial relationships.
+
+This code performs the following steps to generate and visualize a Voronoi Diagram:
+1. **Input Points**: Points are provided, which will serve as the sites for the Voronoi diagram.
+2. **Event Queue Initialization**: Points are sorted and initialized as site events in the event queue.
+3. **Beachline Tree**: A tree structure maintains the current status of the beachline, which is updated as events are processed.
+4. **Event Processing**: The code processes both site events and circle events from the queue.
+5. **Plotting**: The resulting vertices and edges of the Voronoi diagram are plotted.
+
+## Requirements
+
+To run this code, you'll need:
+- Python 3.x
+- Matplotlib
+- NumPy
+- Tkinter (for file dialogs)
+
+You can install the required packages using pip:
+
+```bash
+pip install matplotlib numpy
+```
+
+## Usage
+
+1. **Prepare Your Points**: Replace the sample points (InputPoints1.txt & InputPoints2.txt) in the script with your own set of points.
+2. **Run the Script**: Execute the Python script from the command line:
+
+```bash
+python VoronoiDiagram.py
+```
+3. **View Results**: The Voronoi diagram will be displayed in a new window showing the diagram with vertices and edges based on the input points.
+
+## Output
+
+The output of the script includes:
+
+- Vertices: Red points representing the vertices of the Voronoi cells.
+- Edges: Green lines representing the edges of the Voronoi cells.
+- Bounding Box: The plot includes a bounding box around the Voronoi diagram to ensure all regions are visible.
+
+![Intersection Plot](VoronoiDiagram/Figure_1.png)
+
+![Intersection Plot](VoronoiDiagram/Figure_2.png)
+
+## Conclusion
+
+The Voronoi Diagram Generator script provides a straightforward method for visualizing spatial relationships between a set of points using a Voronoi diagram. By following the instructions in this README, you can easily input your own set of points, run the script, and visualize the resulting Voronoi diagram. This tool is valuable for understanding proximity-based partitioning and can be adapted for various applications in computational geometry and data analysis. If you have any questions or need further modifications, feel free to reach out or contribute to the project.
+
 ## Contact
 
 For questions or further information, please contact:
